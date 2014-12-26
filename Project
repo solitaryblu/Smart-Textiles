@@ -25,7 +25,7 @@ pinMode(led4, OUTPUT);
 pinMode(led5, OUTPUT); 
 }
 
-// the loop routine runs over and over again forever: 
+//the loop routine runs over and over again forever: 
 void loop() 
 { 
 //digitalWrite(led2, HIGH); 
