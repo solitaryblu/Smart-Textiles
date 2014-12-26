@@ -1,0 +1,57 @@
+// digital pin 2 has a pushbutton attached to it. 
+int pushButton1 = 2; 
+int pushButton2 = 3; 
+int pushButton3 = 4; 
+int pushButton4 = 7;
+int led1 = 13; 
+int led2 = 12; 
+int led3 = 11; 
+int led4 = 10; 
+int led5 = 9; 
+// the setup routine runs once when you press reset: 
+
+void setup() 
+{ // initialize serial communication at 9600 bits per second: 
+Serial.begin(9600); 
+// make the pushbutton's pin an input: 
+pinMode(pushButton1, INPUT); 
+pinMode(pushButton2, INPUT); 
+pinMode(pushButton3, INPUT); 
+pinMode(pushButton4, INPUT); 
+pinMode(led1, OUTPUT); 
+pinMode(led2, OUTPUT); 
+pinMode(led3, OUTPUT); 
+pinMode(led4, OUTPUT); 
+pinMode(led5, OUTPUT); 
+}
+
+// the loop routine runs over and over again forever: 
+void loop() 
+{ 
+//digitalWrite(led2, HIGH); 
+// read the input pin: 
+int buttonState1 = digitalRead(pushButton1); 
+int buttonState2 = digitalRead(pushButton2); 
+int buttonState3 = digitalRead(pushButton3); 
+int buttonState4 = digitalRead(pushButton4); 
+//print out the state of the button: 
+Serial.println(buttonState1); 
+Serial.println(buttonState2); 
+Serial.println(buttonState3); 
+Serial.println(buttonState4); 
+delay(1); // delay in between reads for stability 
+if(buttonState1== 0 ||buttonState2 == 0) 
+{ 
+digitalWrite(led1, HIGH); 
+digitalWrite(led3, HIGH); 
+digitalWrite(led4, HIGH); 
+digitalWrite(led5, HIGH); 
+} 
+else 
+{ 
+digitalWrite(led1, LOW); 
+digitalWrite(led3, LOW); 
+digitalWrite(led4, LOW); 
+digitalWrite(led5, LOW);
+ } 
+}
